@@ -1,0 +1,22 @@
+	<!doctype html>
+	<html lang="fr">
+		<head>
+			<meta charset="utf-8">
+			<title>Résultat</title>
+		</head>
+		<body>
+			<p>Bonjour {{prenom}} {{nom}}.</p>
+			<form action="http://localhost:5000/verification" method="post">
+					<p>Pourriez vous svp {{prenom}} {{nom}} calculer le resultat de cette opération.</p>
+					{% if message %}
+        				<p>{{ message }}</p>
+    				{% endif %}
+					<label>Resultat</label> : <input type="text" name="res" />
+					<input type="submit" value="Verifier" />
+					{% if verification %}
+        				<p>{{ verification }}</p>
+    				{% endif %}
+			</form>
+		</body>
+	</html>
+		
